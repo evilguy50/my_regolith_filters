@@ -1,0 +1,9 @@
+1. download this repo.
+2. add this to your regolith config json
+        {
+            "runWith": "python",
+            "Url": "github.com/evilguy50/my_regolith_filters//shorthand",
+            "name": "shorthand"
+        }
+3. copy the filters folder into the root of your behaviour pack.
+4. run the regolith install command on your profile.
