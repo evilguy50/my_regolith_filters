@@ -8,7 +8,7 @@ if not os.path.isdir("data/shorthand"):
 if not os.path.isfile("data/shorthand/config.ini"):
     with open('data/shorthand/config.ini', 'x') as f:
         f.write("[define]\nshorts = admin armors\n[as]\nadmin_long = @a[tag=admin]\narmors_long = @e[type=armor_stand]")
-cfg = config.read('BP/filters/shorthand/config.ini')
+cfg = config.read('data/shorthand/config.ini')
 shorts = cfg["define"]["shorts"]
 pshort = shorts.split()
 for filename in glob.iglob("./BP/functions/" + '**/*.mcfunction', recursive=True):
