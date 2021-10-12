@@ -8,8 +8,8 @@ if not os.path.isdir("data/shorthand"):
 if not os.path.isfile("data/shorthand/config.ini"):
     with open('data/shorthand/config.ini', 'x') as f:
         f.write("[define]\nshorts = admin armors\n[as]\nadmin_long = @a[tag=admin]\narmors_long = @e[type=armor_stand]")
-config.read('BP/filters/shorthand/config.ini')
-shorts = config["define"]["shorts"]
+cfg = config.read('BP/filters/shorthand/config.ini')
+shorts = cfg["define"]["shorts"]
 pshort = shorts.split()
 for filename in glob.iglob("./BP/functions/" + '**/*.mcfunction', recursive=True):
     print(filename)
@@ -18,7 +18,7 @@ for filename in glob.iglob("./BP/functions/" + '**/*.mcfunction', recursive=True
     ropen.close()
     for i in pshort:
         short = i
-        long = config["as"]["{}_long".format(i)]
+        long = cfg["as"]["{}_long".format(i)]
         print("short = {arg1}, long = {arg2}".format(arg1 = short, arg2 = long))
         rFile = rFile.replace(short, long)
     remove(filename)
