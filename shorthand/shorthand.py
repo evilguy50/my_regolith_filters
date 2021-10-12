@@ -1,8 +1,13 @@
 import configparser
-from os import remove
+import os
 import glob
 
 config = configparser.ConfigParser()
+if not os.path.isDir("data/shorthand"):
+    os.mkdir("data/shorthand")
+if not os.path.isFile("data/shorthand/config.ini"):
+    f = os.open("data/shorthand/config.ini", "x")
+    os.write(f, "[define]\nshorts = admin armors\n[as]\nadmin_long = @a[tag=admin]\narmors_long = @e[type=armor_stand]")
 config.read('BP/filters/shorthand/config.ini')
 shorts = config["define"]["shorts"]
 pshort = shorts.split()
