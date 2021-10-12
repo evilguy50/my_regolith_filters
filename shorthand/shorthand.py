@@ -6,8 +6,8 @@ config = configparser.ConfigParser()
 if not os.path.isdir("data/shorthand"):
     os.mkdir("data/shorthand")
 if not os.path.isfile("data/shorthand/config.ini"):
-    f = os.open("data/shorthand/config.ini", "x")
-    os.write(f, "[define]\nshorts = admin armors\n[as]\nadmin_long = @a[tag=admin]\narmors_long = @e[type=armor_stand]")
+    with open('data/shorthand/config.ini', 'x') as f:
+        f.write("[define]\nshorts = admin armors\n[as]\nadmin_long = @a[tag=admin]\narmors_long = @e[type=armor_stand]")
 config.read('BP/filters/shorthand/config.ini')
 shorts = config["define"]["shorts"]
 pshort = shorts.split()
