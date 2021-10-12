@@ -21,7 +21,7 @@ for filename in glob.iglob("./BP/functions/" + '**/*.mcfunction', recursive=True
         long = config["as"]["{}_long".format(i)]
         print("short = {arg1}, long = {arg2}".format(arg1 = short, arg2 = long))
         rFile = rFile.replace(short, long)
-    remove(filename)
+    os.remove(filename)
     newopen = open(filename, "x")
     newopen.write(rFile)
     newopen.close()
