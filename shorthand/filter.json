@@ -2,7 +2,7 @@
     "filters": [
         {
             "runWith": "python",
-            "location": "./shorthand.py",
+            "script": "./shorthand.py",
             "name": "shorthand"
         }
     ]
