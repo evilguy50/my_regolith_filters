@@ -1,5 +1,12 @@
 filter for having shorthand syntax inside of functions.
 
+install url:
+
+    {
+        "url": "https://github.com/evilguy50/regolith-shorthand/shorthand"
+    }
+
+
 example config:
 
     [define]
